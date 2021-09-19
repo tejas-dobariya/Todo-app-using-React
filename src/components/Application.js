@@ -36,7 +36,7 @@ export default function Application(props) {
     <div className={`app bg-${props.mode==='dark'?'dark':'light'}`}>
      <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
         <input type="checkbox" onClick={props.toggleMode} className="form-check-input" id="flexSwitchDefault"/>
-        <label className="form-check-label " htmlFor="flexSwitchDefault">Enable DarkMode</label>
+        <label className= {`form-check-label text-${props.mode==='light'?'dark':'dark'}`} htmlFor="flexSwitchDefault">Enable DarkMode</label>
       </div>
       <div className="container">
         <h1 className={`text-center mb-4 text-${props.mode==='light'?'dark':'light'}`}>Todo List</h1>
