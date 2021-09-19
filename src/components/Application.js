@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FormTodo from './FormTodo'
 import Todo from './Todo'
 
-export default function Application() {
+export default function Application(props) {
+
+
     const [todos, setTodos] = React.useState([
         {
           text: "This is a sample todo",
@@ -31,12 +33,16 @@ export default function Application() {
 
     return (
     <>
-    <div className="app">
+    <div className={`app bg-${props.mode==='dark'?'dark':'light'}`}>
+     <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+        <input type="checkbox" onClick={props.toggleMode} className="form-check-input" id="flexSwitchDefault"/>
+        <label className="form-check-label " htmlFor="flexSwitchDefault">Enable DarkMode</label>
+      </div>
       <div className="container">
-        <h1 className="text-center mb-4">Todo List</h1>
+        <h1 className={`text-center mb-4 text-${props.mode==='light'?'dark':'light'}`}>Todo List</h1>
         <FormTodo addTodo={addTodo} />
-        <div>
-          {todos.map((todo, index) => (
+        <div className={`text-${props.mode==='light'?'dark':'dark'}`}>
+        {todos.map((todo, index) => (
             <Card>
               <Card.Body>
                 <Todo
@@ -50,7 +56,7 @@ export default function Application() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> 
     </div>
     </>
     )
