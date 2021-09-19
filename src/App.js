@@ -10,10 +10,13 @@ function App() {
     if(mode==='dark'){
       setMode('light');
       document.body.style.backgroundColor = 'floralwhite';
+      document.body.style.color = 'black';
+      
     }
     else{
       setMode('dark');
       document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
 
     }
   }

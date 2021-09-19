@@ -33,13 +33,14 @@ export default function Application(props) {
 
     return (
     <>
-    <div className={`app bg-${props.mode==='dark'?'dark':'light'}`}>
-     <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+    <div className="app">
+     <div className={`form-check form-switch`}>
         <input type="checkbox" onClick={props.toggleMode} className="form-check-input" id="flexSwitchDefault"/>
-        <label className= {`form-check-label text-${props.mode==='light'?'dark':'dark'}`} htmlFor="flexSwitchDefault">Enable DarkMode</label>
+        <label className="form-check-label " htmlFor="flexSwitchDefault">Enable DarkMode</label>
       </div>
       <div className="container">
-        <h1 className={`text-center mb-4 text-${props.mode==='light'?'dark':'light'}`}>Todo List</h1>
+        <h1 className={`text-center text-${props.mode==='light'?'dark':'light'}`}>Todo List</h1>
+        <div className={`my-2 text-${props.mode==='light'?'dark':'light'}`}><b>Add Todo</b></div>
         <FormTodo addTodo={addTodo} />
         <div className={`text-${props.mode==='light'?'dark':'dark'}`}>
         {todos.map((todo, index) => (
@@ -56,7 +57,11 @@ export default function Application(props) {
             </Card>
           ))}
         </div>
-      </div> 
+        <div>
+          
+        </div>
+      </div>
+      
     </div>
     </>
     )
